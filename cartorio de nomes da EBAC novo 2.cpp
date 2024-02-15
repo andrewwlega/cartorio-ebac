@@ -1,3 +1,4 @@
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <locale.h>
@@ -118,7 +119,7 @@ void deletar() {
         printf("Não foi possível deletar o arquivo.\n");
     }
 
-    system("pause");
+    // system("pause");  // Comentado para melhorar portabilidade
 }
 
 int main() {
@@ -133,9 +134,10 @@ int main() {
         printf("Escolha a opção desejada no menu:\n\n");
         printf("\t1 - Registrar nomes\n");
         printf("\t2 - Consultar nomes\n");
-        printf("\t3 - Deletar nomes\n\n");
-        printf("Opção: ");
+        printf("\t3 - Deletar nomes\n");
+        printf("\t4 - Sair do sistema\n\n");  // Adição do novo item
 
+        printf("Opção: ");
         scanf("%d", &opcao);
 
         system("cls");
@@ -155,6 +157,11 @@ int main() {
                 deletar();
                 break;
 
+            case 4:  // Adição do novo case
+                printf("Obrigado por utilizar o sistema.\n");
+                laco = 0;  // Encerra o loop para sair do sistema
+                break;
+
             default:
                 printf("Essa opção não está disponível\n");
                 break;
@@ -163,6 +170,9 @@ int main() {
 
     return 0;
 }
+```
+
+
 
 
 
