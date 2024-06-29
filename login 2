@@ -1,0 +1,24 @@
+# language: pt
+Funcionalidade: Configurar produto
+  Como cliente da EBAC-SHOP
+  Quero configurar meu produto de acordo com meu tamanho e gosto
+  E escolher a quantidade
+  Para depois inserir no carrinho
+
+Cenário: Selecionar cor, tamanho e quantidade
+  Dado que eu estou na página de configuração do produto
+  Quando eu selecionar uma cor
+  E selecionar um tamanho
+  E selecionar uma quantidade
+  Então o produto deve ser configurado com as opções escolhidas
+
+Cenário: Limite de produtos por venda
+  Dado que eu estou na página de configuração do produto
+  Quando eu tentar selecionar mais de 10 produtos
+  Então o sistema deve exibir uma mensagem de alerta "Você pode selecionar no máximo 10 produtos por venda"
+
+Cenário: Limpar configurações
+  Dado que eu estou na página de configuração do produto
+  E eu já selecionei cor, tamanho e quantidade
+  Quando eu clicar no botão "limpar"
+  Então as seleções devem voltar ao estado original
